@@ -6,22 +6,39 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "format": "prettier .  --write"
   },
   "dependencies": {
-    "vue": "^3.5.22"
+    "sass": "^1.98.0",
+    "vue": "^3.5.30",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "@types/node": "^24.6.0",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.0",
+    "@vitejs/plugin-vue": "^6.0.5",
     "@vue/tsconfig": "^0.8.1",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "3.8.1",
     "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.1",
     "vite": "npm:rolldown-vite@7.1.14",
-    "vue-tsc": "^3.1.0"
+    "vue-tsc": "^3.2.6"
   },
   "pnpm": {
     "overrides": {
       "vite": "npm:rolldown-vite@7.1.14"
     }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
