@@ -1,13 +1,24 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Navbar, Footer } from './components'
+</script>
 
 <template>
-  <h1>Hello App!</h1>
-  <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
-  <nav>
-    <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
-  </nav>
-  <router-view />
+  <Navbar />
+  <div class="content">
+    <router-view />
+  </div>
+  <Footer />
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+</style>
